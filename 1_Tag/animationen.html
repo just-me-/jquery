@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-2.1.1.js"></script>
+		<script src="jquery-ui/external/jquery/jquery.js"></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+		<script type="text/javascript">
+			$(function() {
+			/*
+				$('div.a1').hide();
+				$('div.a2').hide();
+				$('div.a3').hide();
+			*/
+				$('div.a1').hide(function () {
+					$('div.a2').hide(function () {
+						$('div.a3').hide();
+					});
+				});
+				
+				var div=$("div#box"); 
+				div.animate({
+					left: (Math.floor(window.innerWidth/2)-50), 
+					top: (Math.floor(window.innerHeight/2)-50),
+					width:'100px', 
+					height:'100px',
+					backgroundColor: "purple"}, "slow", function () {
+						div.css("background-color", "blue");
+						div.hide("puff", { percent: 0 }, 1000);
+					}
+				);
+					
+				$('#b1').click(function () {
+					$(this).effect("bounce", {
+						times:5 }, 300);
+				});
+				$('#b2').click(function () {
+					$(this).effect("bounce", {
+						direction:'left', 
+						times:5 }, 300);
+				});
+				$('#b3').click(function () {
+					$(this).effect("bounce", {
+						direction:'right', 
+						times:5 }, 300);
+				});
+				$('#b4').click(function () {
+					$(this).effect("bounce", {
+						direction:'down', 
+						times:5 }, 300);
+				});
+				$("#bounceAll").click(function(){
+					$(".clicking").click();
+				});
+				
+			});
+			
+		</script>
+		
+		<style type="text/css">
+			#box {
+				background-color: red;
+				width: 20px; 
+				height: 20px; 
+				position: absolute; 
+				left: 0; 
+				top: 0; 
+			}
+			
+			.clicking {
+				padding: 5px;
+				width: 150px; 
+				height: 100px; 
+				text-align: center; 
+			}
+			#b1 { background-color: #ffee88; }
+			#b2 { background-color: #ee88ff; }
+			#b3 { background-color: #ee8888; }
+			#b4 { background-color: #88eeff; }
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="box"></div>
+		
+		<table>
+			<tr>
+				<td>
+					<div id="b1" class="clicking">Click to bounce up</div>
+				</td>
+				<td>
+					<div id="b2" class="clicking">Click to bounce left</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="b3" class="clicking">Click to bounce right</div>
+				</td>
+				<td>
+					<div id="b4" class="clicking">Click to bounce down</div>
+				</td>
+			</tr>
+		</table>
+		<div>
+			<input id="bounceAll" type="button" value="Click to Bounce All!"/>
+		</div>
+		
+		<div class="a1">a1</div>
+		<div class="a2">a2</div>
+		<div class="a3">a3</div>
+		
+	</body>
+
+</html>

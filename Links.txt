@@ -4,3 +4,8 @@ http://www.w3schools.com/jquery/trysel.asp?filename=trysel_basic&jqsel=p.intro,%
 Übung 5.2
 http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_noconflict
 
+Übung 6.2
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_toggle
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_down
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation2
+

@@ -7,16 +7,16 @@
 			// $(document).ready(function() {
 			$(function() {
 				$("button#hide").click(function() {
-					$("p").hide();
+					$("p").hide("slow");
 				});
 				$("button#show").click(function() {
-					$("p").show();
+					$("p").show("slow");
 				});
 				$("button#showT").click(function() {
-					$("p#title").show();
+					$("p#title").fadeTo(500, 1);
 				});
 				$("button#hideT").click(function() {
-					$("p#title").hide();
+					$("p#title").fadeTo(500, 0.25);
 				});
 			});
 		</script>
@@ -26,7 +26,7 @@
 		<h2>include jQuery</h1>
 		<p id="title">Das ist der Titeltext...</p>
 		<p>Troll- das ist ein ganz langer Text.</p>
-		<p>Troll2 - dieser Text ist noch viel länger!</p>
+		<p>Troll2 - dieser Text ist noch viel laenger!</p>
 		<button id="hide">Click me</button>
 		<button id="show">Click not</button>
 		<button id="showT">Show Title</button>
