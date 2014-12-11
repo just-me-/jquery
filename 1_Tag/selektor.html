@@ -3,10 +3,13 @@
 		<script type="text/javascript" src="jquery-2.1.1.js">
 		</script>
 		<script type="text/javascript">
-			$(document).ready(function()
-			{
+			$(document).ready(function() {
 			  $("tr:even").css("background-color", "#FFFFFF");
 			  $("tr:odd").css("background-color", "#F2F2F2");
+			  $( ".new input" ).change(function() {
+				  $(this).parent().prev('td').css("color", "red");
+				  $(this).parent().prev('td').html("ch");
+				});
 			});
 			function colorToState (id) {
 				$("#"+id).css("color", "red");
@@ -24,7 +27,15 @@
 			<tr><td>PLZ			</td><td id="statusPLZ">ok		</td><td><input type="text"	onchange="colorToState('statusPLZ')"/></td></tr>
 			<tr><td>Ort			</td><td id="statusOrt">ok		</td><td><input type="text"	onchange="colorToState('statusOrt')"/></td></tr>
 			<tr><td>Beruf		</td><td id="statusBeruf">ok	</td><td><input type="text"	onchange="colorToState('statusBeruf')"/></td></tr>
-			
+		</table>
+		
+		<table class="new" width="100%">
+			<tr><td>Feld		</td><td>Status	</td><td>Eingabe</td></tr>
+			<tr><td>Vorname		</td><td>ok	</td><td><input type="text"/></td></tr>
+			<tr><td>Nachname	</td><td>ok	</td><td><input type="text"/></td></tr>
+			<tr><td>PLZ			</td><td>ok	</td><td><input type="text"/></td></tr>
+			<tr><td>Ort			</td><td>ok	</td><td><input type="text"/></td></tr>
+			<tr><td>Beruf		</td><td>ok	</td><td><input type="text"/></td></tr>
 		</table>
 		
 	</body>
