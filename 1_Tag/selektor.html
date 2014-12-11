@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-2.1.1.js">
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+			  $("tr:even").css("background-color", "#FFFFFF");
+			  $("tr:odd").css("background-color", "#F2F2F2");
+			});
+			function colorToState (id) {
+				$("#"+id).css("color", "red");
+				$("#"+id).html("ch");
+			}
+		</script>
+	</head>
+
+	<body>
+		<h2>Selektoren</h1>
+		<table width="100%">
+			<tr><td>Feld		</td><td>Status	</td><td>Eingabe</td></tr>
+			<tr><td>Vorname		</td><td id="statusVorname">ok	</td><td><input type="text"	onchange="colorToState('statusVorname')"/></td></tr>
+			<tr><td>Nachname	</td><td id="statusNachname">ok	</td><td><input type="text"	onchange="colorToState('statusNachname')"/></td></tr>
+			<tr><td>PLZ			</td><td id="statusPLZ">ok		</td><td><input type="text"	onchange="colorToState('statusPLZ')"/></td></tr>
+			<tr><td>Ort			</td><td id="statusOrt">ok		</td><td><input type="text"	onchange="colorToState('statusOrt')"/></td></tr>
+			<tr><td>Beruf		</td><td id="statusBeruf">ok	</td><td><input type="text"	onchange="colorToState('statusBeruf')"/></td></tr>
+			
+		</table>
+		
+	</body>
+
+</html>

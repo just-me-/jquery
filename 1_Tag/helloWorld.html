@@ -1,11 +1,22 @@
 <html>
 	<head>
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 		<script type="text/javascript" src="jquery-2.1.1.js">
 		</script>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$("button").click(function() {
+			// $(document).ready(function() {
+			$(function() {
+				$("button#hide").click(function() {
 					$("p").hide();
+				});
+				$("button#show").click(function() {
+					$("p").show();
+				});
+				$("button#showT").click(function() {
+					$("p#title").show();
+				});
+				$("button#hideT").click(function() {
+					$("p#title").hide();
 				});
 			});
 		</script>
@@ -13,10 +24,13 @@
 
 	<body>
 		<h2>include jQuery</h1>
-		<p>Troll</p>
-		<p>Troll2</p>
-		<button>Click me</button>
-		<button>Click not</button>
+		<p id="title">Das ist der Titeltext...</p>
+		<p>Troll- das ist ein ganz langer Text.</p>
+		<p>Troll2 - dieser Text ist noch viel länger!</p>
+		<button id="hide">Click me</button>
+		<button id="show">Click not</button>
+		<button id="showT">Show Title</button>
+		<button id="hideT">Hide Title</button>
 	</body>
 
 </html>
