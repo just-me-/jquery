@@ -1,2 +1,6 @@
 Übung 4.2.1
 http://www.w3schools.com/jquery/trysel.asp?filename=trysel_basic&jqsel=p.intro,%23choose
+
+Übung 5.2
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_noconflict
+

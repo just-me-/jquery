@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$.noConflict();
+jQuery(document).ready(function(){
+
+  jQuery("button").click(function(){
+    jQuery("p").text("jQuery is still working!");
+  });
+  jQuery("button").mouseover(function(){
+    jQuery("p").text("jQuery is still working...");
+  });
+  jQuery("button").dblclick(function(){
+    jQuery("p").text("Not so fast...");
+  });
+  jQuery("button#foo").click(function(){
+    foo();
+  });
+});
+function foo() {
+	alert("troll");
+}
+</script>
+</head>
+
+<body>
+<p>This is a paragraph.</p>
+<button>Test jQuery</button>
+<button id="foo">don't click me</button>
+</body>
+</html>
