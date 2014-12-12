@@ -24,11 +24,22 @@
 					rotate();
 				}, 50);
 				
+				
+				(function pulse(back) {
+					$('#div1 img').animate({
+						width: (back) ?
+							$('#div1 img').width() + 20 :
+							$('#div1 img').width() - 20 },
+						700);
+					$('#div1').animate({
+						'font-size': (back) ? '100px' : '140px', 
+						opacity: (back) ? 1 : 0.5 },
+						700,
+						function() { pulse(!back) })
+				}) (false);
+				
 			});
 			
-		function changeVisibility () {
-			$("#checkbox_label").toggle("slow");
-		}
 		</script>
 		
 		<style type="text/css">
@@ -41,11 +52,45 @@
 				top: 100; 
 			}
 			
+			.boxen {
+				background-color: green; 
+				width: 100px; 
+				height: 100px; 
+				position: absolute; 
+			}
+			#box1 {
+				left: 300; 
+				top: 100; 
+				background-color: red;
+			}
+			#box2 {
+				left: 400; 
+				top: 100; 
+				background-color: blue;
+			}
+			
+			#mtop {
+				margin-top: 390px; 
+			}
+			
 		</style>
 	</head>
 
 	<body>
 		<div id="box"></div>
+		
+		<div id="boxen">
+			<div id="box1" class="boxen blue"></div>
+			<div id="box2" class="boxen blue"></div>
+		</div>
+		
+		<h2 id="mtop">Heartbit</h2>
+		<div id="div1">
+			<img src="img/heart1.png" />
+			<img src="img/heart2.png" />
+			<img src="img/heart3.png" />
+		</div>
+		
 	</body>
 
 </html>
