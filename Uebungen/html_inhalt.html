@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-2.1.1.js"></script>
+		<script src="jquery-ui/external/jquery/jquery.js"></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+		<script type="text/javascript">
+			$(function() {
+				
+				var newLine = 
+					'<tr>'+
+						'<td><input type="text" class="stretch" /></td>'+
+						'<td><input type="text" class="stretch" /></td>'+
+						'<td><input type="text" class="stretch" /></td>'+
+						'<td><button class="del">[x]</button></td>'+
+					'</tr>';
+					
+				$("#add").on("click", function(){
+					$('#table1').append(newLine);
+					
+					// $(".del").on("click",function(){
+					// 	$(this).parent().parent().remove();
+					// });
+					
+				 });
+				$("#add").click();
+				 
+				$("table#table1").on("click", ".del", function(){
+						$(this).parent().parent().remove();
+				});
+				
+				
+				$( "#land" ).change(function() {
+				  if($(this).val() == "ch"){
+					setValues(["Zürich", "Bern"]);
+				  } else if($(this).val() == "de"){
+					setValues(["Frankfurt", "München"]);
+				  } else{
+					setValues();
+				  }
+				});
+				
+				$("#add_flughafen").click(function(){
+						$("#flughafen_input").val($("#flughafen").val());
+				});
+				
+			});
+			
+			function setValues(options) {
+				$('#mySelect').remove();
+				var option_html = "";
+				if(options){
+					$.each(options, function( index, value ) {
+					  option_html += "<option value='"+value+"'>"+value+"</option>";
+					});
+				}
+				$(flughafen).html(option_html);
+			}
+			
+		</script>
+		
+		<style type="text/css">
+			.stretch { width: 100%; }	
+			select { width: 173px; margin-bottom: 2px; }
+		</style>
+	</head>
+
+	<body>
+		
+		<table id="table1">
+			<tr>
+				<th style="width: 50px">Tag</th>
+				<th style="width: 200px">Beschreibung</th>
+				<th style="width: 80px">Aufwand</th>
+				<th style="width: 30px"></th>
+			</tr>
+		</table>
+		<button id="add">[+]</button>
+		
+		<h2>Selects</h2>
+		<div>
+			<select id="land" name="land" size="1">
+			  <option value="">Bitte wählen</option>
+			  <option value="ch">Schweiz</option>
+			  <option value="de">Deutschland</option>
+			</select>
+		</div>
+		<div>
+			<select id="flughafen" name="flughafen" size="1">
+			</select>
+		</div>
+		<div>
+			<input id="flughafen_input" type="text">
+			<button id="add_flughafen">Add</button>
+		</div>
+		
+	</body>
+
+</html>
