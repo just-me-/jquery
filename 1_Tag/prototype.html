@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-2.1.1.js">
+		</script>
+		<script type="text/javascript">
+		
+			function A() {
+				this.a = 123;
+			}
+			function B() {
+				this.b = 345;
+			}
+			function C() {
+				this.c = 678;
+			}
+			
+			B.prototype = new A();
+			C.prototype = new B();
+			
+			$(function() {
+			
+				var obj = new C();
+				// $("#a").text(obj.a);
+				// $("#b").text(obj.b);
+				// $("#c").text(obj.c);
+				
+				//$("#$_").text("obj.$_") for qw|a b c|;
+				$.each([ "a", "b", "c" ], function( index, valueCur ) {
+				  $("#"+valueCur).text(obj[valueCur]);
+				});
+				
+			});
+		</script>
+	</head>
+
+	<body>
+		<h2>Vererbung mit Prototype</h1>
+		<div id="a"></div>
+		<div id="b"></div>
+		<div id="c"></div>
+	</body>
+
+</html>
