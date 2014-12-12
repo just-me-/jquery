@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-2.1.1.js"></script>
+		<script src="jquery-ui/external/jquery/jquery.js"></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+		<script type="text/javascript">
+			$(function() {
+				
+				var div=$("div#box"); 
+				var rotation = 0;
+				jQuery.fn.rotate = function(degrees) {
+					$(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+								 '-moz-transform' : 'rotate('+ degrees +'deg)',
+								 '-ms-transform' : 'rotate('+ degrees +'deg)',
+								 'transform' : 'rotate('+ degrees +'deg)'});
+					return $(this);
+				};
+				function rotate() {
+					rotation += 5;
+					div.rotate(rotation);
+				}
+				window.setInterval(function(){
+					rotate();
+				}, 50);
+				
+			});
+			
+		function changeVisibility () {
+			$("#checkbox_label").toggle("slow");
+		}
+		</script>
+		
+		<style type="text/css">
+			#box {
+				background-image: linear-gradient(to bottom,red 0,blue 100%);
+				width: 100px; 
+				height: 200px; 
+				position: absolute; 
+				left: 100; 
+				top: 100; 
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="box"></div>
+	</body>
+
+</html>
