@@ -47,14 +47,12 @@
 			});
 			
 			function setValues(options) {
-				$('#mySelect').remove();
-				var option_html = "";
+				$('#flughafen').empty();
 				if(options){
 					$.each(options, function( index, value ) {
-					  option_html += "<option value='"+value+"'>"+value+"</option>";
+					  $('#flughafen').append($("<option></option>").attr("value",value).text(value)); 
 					});
 				}
-				$(flughafen).html(option_html);
 			}
 			
 		</script>
