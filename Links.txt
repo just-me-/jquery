@@ -9,3 +9,8 @@ http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_toggle
 http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_down
 http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation2
 
+Beispiel 10
+neue Links:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_load
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_load2
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_load_callback

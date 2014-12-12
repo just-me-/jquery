@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-2.1.1.js"></script>
+		<script src="jquery-ui/external/jquery/jquery.js"></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+		<script type="text/javascript">
+			$(function() {
+				
+				$( "#land" ).change(function() {
+				  if($(this).val() == "ch"){
+					setValues(["Zürich", "Bern"]);
+				  } else if($(this).val() == "de"){
+					setValues(["Frankfurt", "München"]);
+				  } else{
+					setValues();
+				  }
+				});
+				
+				$("#add_flughafen").click(function(){
+						$("#flughafen_input").val($("#flughafen").val());
+				});
+				
+				$("#ajax_div").html("test");
+				$.ajax({
+					type: "GET",
+					url: "http://localhost:81/ajax_php.php",
+					data: "bla1=bla2",
+					success: function(data) {
+						$("#ajax_div").html(data);
+					},
+					error: function(data) {
+						$("#ajax_div").html("fehler");
+					}
+				});
+				
+			});
+			
+			function setValues(options) {
+				$('#flughafen').empty();
+				if(options){
+					$.each(options, function( index, value ) {
+					  $('#flughafen').append($("<option></option>").attr("value",value).text(value)); 
+					});
+				}
+			}
+			
+		</script>
+		
+		<style type="text/css">
+			.stretch { width: 100%; }	
+			select { width: 173px; margin-bottom: 2px; }
+		</style>
+	</head>
+
+	<body>
+		
+		<h2>Selects</h2>
+		<div>
+			<select id="land" name="land" size="1">
+			  <option value="">Bitte wählen</option>
+			  <option value="ch">Schweiz</option>
+			  <option value="de">Deutschland</option>
+			</select>
+		</div>
+		<div>
+			<select id="flughafen" name="flughafen" size="1">
+			</select>
+		</div>
+		<div>
+			<input id="flughafen_input" type="text">
+			<button id="add_flughafen">Add</button>
+		</div>
+		
+		<div id="ajax_div"></div>
+		
+	</body>
+
+</html>
