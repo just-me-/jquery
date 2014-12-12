@@ -54,6 +54,9 @@
 				
 			});
 			
+		function changeVisibility () {
+			$("#checkbox_label").toggle("slow");
+		}
 		</script>
 		
 		<style type="text/css">
@@ -76,6 +79,8 @@
 			#b2 { background-color: #ee88ff; }
 			#b3 { background-color: #ee8888; }
 			#b4 { background-color: #88eeff; }
+			
+			.margintop { margin-top: 20px; }
 		</style>
 	</head>
 
@@ -103,6 +108,11 @@
 		</table>
 		<div>
 			<input id="bounceAll" type="button" value="Click to Bounce All!"/>
+		</div>
+		
+		<div class="margintop">
+			<input type="checkbox" name="checkbox" id="checkbox_id" value="1" checked onchange="changeVisibility()">
+			<label id="checkbox_label" for="checkbox_id">Ich werde angezeigt</label>
 		</div>
 		
 		<div class="a1">a1</div>
